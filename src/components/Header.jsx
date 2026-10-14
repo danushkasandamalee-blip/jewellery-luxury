@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { supabase } from "../lib/supabaseClient";
+import "./Header.css";
 
 export default function Header() {
   const [businessName, setBusinessName] = useState("JEWELLERY");
@@ -26,18 +27,20 @@ export default function Header() {
     setMenuOpen(false);
   }
 
-  function navClass({ isActive }) {
-    return isActive ? "nav-link active" : "nav-link";
+  function getNavClass({ isActive }) {
+    return isActive
+      ? "luxury-nav-link luxury-nav-link-active"
+      : "luxury-nav-link";
   }
 
   return (
-    <header className="site-header">
+    <header className="luxury-header">
 
-      <div className="header-top">
+      <div className="luxury-header-top">
 
         <button
           type="button"
-          className="mobile-menu-button"
+          className="luxury-menu-button"
           onClick={() => setMenuOpen((current) => !current)}
           aria-label={menuOpen ? "Close menu" : "Open menu"}
           aria-expanded={menuOpen}
@@ -47,7 +50,7 @@ export default function Header() {
 
         <Link
           to="/"
-          className="site-logo"
+          className="luxury-logo"
           onClick={closeMenu}
         >
           {businessName}
@@ -55,7 +58,7 @@ export default function Header() {
 
         <Link
           to="/appointment"
-          className="header-appointment"
+          className="luxury-appointment"
           onClick={closeMenu}
         >
           Appointment
@@ -64,13 +67,15 @@ export default function Header() {
       </div>
 
       <nav
-        className={`main-nav ${
-          menuOpen ? "main-nav-open" : ""
-        }`}
+        className={
+          menuOpen
+            ? "luxury-nav luxury-nav-open"
+            : "luxury-nav"
+        }
       >
 
         <NavLink
-          className={navClass}
+          className={getNavClass}
           to="/shop"
           onClick={closeMenu}
         >
@@ -78,7 +83,7 @@ export default function Header() {
         </NavLink>
 
         <NavLink
-          className={navClass}
+          className={getNavClass}
           to="/collections"
           onClick={closeMenu}
         >
@@ -86,7 +91,7 @@ export default function Header() {
         </NavLink>
 
         <NavLink
-          className={navClass}
+          className={getNavClass}
           to="/category/rings"
           onClick={closeMenu}
         >
@@ -94,7 +99,7 @@ export default function Header() {
         </NavLink>
 
         <NavLink
-          className={navClass}
+          className={getNavClass}
           to="/category/earrings"
           onClick={closeMenu}
         >
@@ -102,7 +107,7 @@ export default function Header() {
         </NavLink>
 
         <NavLink
-          className={navClass}
+          className={getNavClass}
           to="/about"
           onClick={closeMenu}
         >
@@ -110,7 +115,7 @@ export default function Header() {
         </NavLink>
 
         <NavLink
-          className={navClass}
+          className={getNavClass}
           to="/contact"
           onClick={closeMenu}
         >

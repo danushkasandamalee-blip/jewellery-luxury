@@ -182,3 +182,41 @@
     border-right-color: var(--border);
   }
 }
+/* ==========================================
+   MOBILE MENU VISIBILITY FIX
+   Desktop styles are NOT affected
+   ========================================== */
+
+@media (max-width: 768px) {
+
+  /* Mobile menu panel */
+  .mobile-menu {
+    background: #faf8f3 !important;
+    opacity: 1 !important;
+  }
+
+  /* Mobile navigation links */
+  .mobile-menu a {
+    color: #242424 !important;
+    opacity: 1 !important;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+  }
+
+  /* Divider lines */
+  .mobile-menu li {
+    border-bottom: 1px solid rgba(30, 30, 30, 0.12) !important;
+  }
+
+  /* Hover / tap */
+  .mobile-menu a:hover,
+  .mobile-menu a:active {
+    color: #b59442 !important;
+  }
+
+  /* Make sure menu stays above page content */
+  .mobile-menu {
+    position: relative;
+    z-index: 9999;
+  }
+}

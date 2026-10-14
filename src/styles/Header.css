@@ -1,352 +1,344 @@
-/* ======================================================
-   JEWELLERY HEADER
-   ====================================================== */
+/* =========================================================
+   JEWELLERY WEBSITE HEADER
+   ========================================================= */
 
-.luxury-header {
-  width: 100%;
-  position: relative;
-  z-index: 99999;
+.jwl-header {
+  position: relative !important;
+  z-index: 99999 !important;
 
-  background: #ffffff;
+  width: 100% !important;
 
-  opacity: 1 !important;
-  visibility: visible !important;
-}
-
-
-/* ======================================================
-   TOP HEADER
-   ====================================================== */
-
-.luxury-header-top {
-  min-height: 88px;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  box-sizing: border-box;
-
-  padding: 0 38px;
-
-  background: #575755;
-
-  opacity: 1 !important;
-}
-
-
-/* ======================================================
-   LOGO
-   ====================================================== */
-
-.luxury-logo {
-  text-decoration: none !important;
-
-  color: #ffffff !important;
-  -webkit-text-fill-color: #ffffff !important;
-
-  opacity: 1 !important;
-
-  font-family: Georgia, "Times New Roman", serif;
-
-  font-size: 21px;
-  font-weight: 400;
-
-  letter-spacing: 0.16em;
-
-  text-transform: uppercase;
-}
-
-
-/* ======================================================
-   APPOINTMENT
-   ====================================================== */
-
-.luxury-appointment {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  padding: 12px 20px;
-
-  background: #d4af37;
-
-  color: #151515 !important;
-  -webkit-text-fill-color: #151515 !important;
-
-  text-decoration: none !important;
-
-  border-radius: 28px;
-
-  font-size: 11px;
-  font-weight: 700;
-
-  letter-spacing: 0.08em;
-
-  text-transform: uppercase;
-
-  opacity: 1 !important;
-}
-
-
-/* ======================================================
-   DESKTOP NAV
-   ====================================================== */
-
-.luxury-nav {
-  display: flex;
-
-  justify-content: center;
-  align-items: center;
-
-  gap: 40px;
-
-  width: 100%;
-
-  box-sizing: border-box;
-
-  padding: 18px 30px;
+  margin: 0 !important;
+  padding: 0 !important;
 
   background: #ffffff !important;
 
   opacity: 1 !important;
   visibility: visible !important;
+
+  isolation: isolate;
 }
 
 
-/* ======================================================
-   DESKTOP LINKS
-   ====================================================== */
+/* =========================================================
+   TOP HEADER
+   ========================================================= */
 
-.luxury-nav-link {
+.jwl-header-top {
+  position: relative;
+
+  min-height: 92px;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    auto
+    1fr;
+
+  align-items: center;
+
+  width: 100%;
+
+  padding: 0 42px;
+
+  box-sizing: border-box;
+
+  background: #555553 !important;
+
+  opacity: 1 !important;
+}
+
+
+/* =========================================================
+   LOGO / BUSINESS NAME
+   ========================================================= */
+
+.jwl-logo {
+  grid-column: 2;
+
   display: block;
+
+  margin: 0;
+
+  padding: 0 20px;
+
+  text-align: center;
 
   text-decoration: none !important;
 
-  color: #242424 !important;
-  -webkit-text-fill-color: #242424 !important;
+  text-transform: uppercase;
+
+  white-space: nowrap;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 22px;
+
+  font-weight: 400;
+
+  letter-spacing: 0.17em;
+
+  line-height: 1.2;
+
+  color: #ffffff !important;
+
+  -webkit-text-fill-color:
+    #ffffff !important;
 
   opacity: 1 !important;
+
   visibility: visible !important;
+}
 
-  font-size: 13px;
-  font-weight: 500;
 
-  letter-spacing: 0.16em;
+/* =========================================================
+   APPOINTMENT BUTTON
+   ========================================================= */
+
+.jwl-appointment {
+  grid-column: 3;
+
+  justify-self: end;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  min-height: 46px;
+
+  padding: 0 20px;
+
+  box-sizing: border-box;
+
+  border-radius: 30px;
+
+  border: 1px solid #e1c568;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f2d86d,
+      #c99c20
+    ) !important;
+
+  text-decoration: none !important;
 
   text-transform: uppercase;
 
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.1em;
+
+  color: #171717 !important;
+
+  -webkit-text-fill-color:
+    #171717 !important;
+
+  opacity: 1 !important;
+
+  visibility: visible !important;
+
   transition:
-    color 0.25s ease,
-    background-color 0.25s ease;
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
 
-.luxury-nav-link:hover {
-  color: #ac8528 !important;
-  -webkit-text-fill-color: #ac8528 !important;
+.jwl-appointment:hover {
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 8px 22px
+    rgba(0, 0, 0, 0.15);
 }
 
 
-.luxury-nav-link-active {
-  color: #ac8528 !important;
-  -webkit-text-fill-color: #ac8528 !important;
-}
-
-
-/* ======================================================
-   MOBILE BUTTON
-   ====================================================== */
-
-.luxury-menu-button {
+.jwl-appointment-mobile {
   display: none;
 }
 
 
-/* ======================================================
-   MOBILE
-   ====================================================== */
+/* =========================================================
+   DESKTOP NAVIGATION
+   ========================================================= */
+
+.jwl-nav {
+  display: flex !important;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 42px;
+
+  width: 100%;
+
+  padding: 18px 30px;
+
+  margin: 0;
+
+  box-sizing: border-box;
+
+  background: #ffffff !important;
+
+  border-bottom:
+    1px solid
+    rgba(0, 0, 0, 0.08);
+
+  opacity: 1 !important;
+
+  visibility: visible !important;
+
+  filter: none !important;
+
+  transform: none;
+}
+
+
+/* =========================================================
+   DESKTOP NAV LINKS
+   ========================================================= */
+
+.jwl-nav > .jwl-nav-link {
+  display: block !important;
+
+  margin: 0 !important;
+
+  padding: 4px 0 !important;
+
+  background: transparent !important;
+
+  border: none !important;
+
+  text-decoration: none !important;
+
+  text-transform: uppercase;
+
+  text-align: center;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 12px !important;
+
+  font-weight: 500 !important;
+
+  letter-spacing: 0.18em !important;
+
+  line-height: 1.4 !important;
+
+  color: #252525 !important;
+
+  -webkit-text-fill-color:
+    #252525 !important;
+
+  opacity: 1 !important;
+
+  visibility: visible !important;
+
+  filter: none !important;
+
+  text-shadow: none !important;
+
+  mix-blend-mode: normal !important;
+
+  transition:
+    color 0.25s ease;
+}
+
+
+.jwl-nav > .jwl-nav-link:hover {
+  color: #a27d25 !important;
+
+  -webkit-text-fill-color:
+    #a27d25 !important;
+}
+
+
+.jwl-nav >
+.jwl-nav-link-active {
+  color: #a27d25 !important;
+
+  -webkit-text-fill-color:
+    #a27d25 !important;
+}
+
+
+/* =========================================================
+   MENU BUTTON
+   ========================================================= */
+
+.jwl-menu-button {
+  display: none;
+}
+
+
+/* =========================================================
+   MOBILE HEADER
+   ========================================================= */
 
 @media screen and (max-width: 768px) {
 
-  .luxury-header {
-    opacity: 1 !important;
-    visibility: visible !important;
-
-    background: #ffffff !important;
-  }
-
-
-  /* --------------------------------------------------
-     HEADER BAR
-     -------------------------------------------------- */
-
-  .luxury-header-top {
-    min-height: 82px;
-
-    padding: 0 18px;
-
-    gap: 12px;
-
-    background: #575755;
-
-    opacity: 1 !important;
-  }
-
-
-  /* --------------------------------------------------
-     MENU BUTTON
-     -------------------------------------------------- */
-
-  .luxury-menu-button {
-    display: flex !important;
-
-    align-items: center;
-    justify-content: center;
-
-    flex: 0 0 52px;
-
-    width: 52px;
-    height: 52px;
-
-    padding: 0;
-
-    border: 2px solid #d4af37;
-
-    border-radius: 12px;
-
-    background: transparent !important;
-
-    color: #171717 !important;
-
-    -webkit-text-fill-color: #171717 !important;
-
-    opacity: 1 !important;
-
-    font-size: 27px;
-
-    line-height: 1;
-
-    cursor: pointer;
-  }
-
-
-  /* --------------------------------------------------
-     LOGO
-     -------------------------------------------------- */
-
-  .luxury-logo {
-    flex: 1;
-
-    min-width: 0;
-
-    text-align: center;
-
-    color: #ffffff !important;
-    -webkit-text-fill-color: #ffffff !important;
-
-    opacity: 1 !important;
-
-    font-size: 17px;
-
-    letter-spacing: 0.13em;
-
-    white-space: nowrap;
-
-    overflow: hidden;
-
-    text-overflow: ellipsis;
-  }
-
-
-  /* --------------------------------------------------
-     APPOINTMENT
-     -------------------------------------------------- */
-
-  .luxury-appointment {
-    flex: 0 0 auto;
-
-    min-width: 64px;
-    min-height: 48px;
-
-    padding: 0 10px;
-
-    box-sizing: border-box;
-
-    background: #d4af37 !important;
-
-    color: #161616 !important;
-    -webkit-text-fill-color: #161616 !important;
-
-    opacity: 1 !important;
-
-    border-radius: 25px;
-
-    font-size: 9px;
-
-    text-align: center;
-  }
-
-
-  /* ==================================================
-     MENU CLOSED
-     ================================================== */
-
-  .luxury-nav {
-    display: none !important;
-  }
-
-
-  /* ==================================================
-     MENU OPEN
-     ================================================== */
-
-  .luxury-nav.luxury-nav-open {
-    display: flex !important;
-
+  .jwl-header {
     position: relative !important;
-
-    flex-direction: column !important;
-
-    align-items: stretch !important;
-
-    justify-content: flex-start !important;
-
-    gap: 0 !important;
 
     width: 100% !important;
 
-    padding: 0 28px !important;
-
-    margin: 0 !important;
-
-    box-sizing: border-box !important;
+    z-index: 999999 !important;
 
     background: #ffffff !important;
-
-    background-color: #ffffff !important;
 
     opacity: 1 !important;
 
     visibility: visible !important;
-
-    filter: none !important;
-
-    mix-blend-mode: normal !important;
-
-    transform: none !important;
-
-    z-index: 999999 !important;
   }
 
 
-  /* ==================================================
-     MOBILE MENU LINKS
-     ================================================== */
+  /* =====================================================
+     MOBILE TOP BAR
+     ===================================================== */
 
-  .luxury-header
-  .luxury-nav.luxury-nav-open
-  > .luxury-nav-link {
+  .jwl-header-top {
+    min-height: 84px;
+
+    display: grid;
+
+    grid-template-columns:
+      62px
+      minmax(0, 1fr)
+      62px;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 0 16px;
+
+    background:
+      #555553 !important;
+
+    opacity: 1 !important;
+
+    visibility: visible !important;
+  }
+
+
+  /* =====================================================
+     MOBILE MENU BUTTON
+     ===================================================== */
+
+  .jwl-menu-button {
+    grid-column: 1;
 
     display: flex !important;
 
@@ -354,119 +346,470 @@
 
     justify-content: center !important;
 
-    width: 100% !important;
+    width: 54px !important;
 
-    min-height: 74px !important;
-
-    padding: 20px 10px !important;
+    height: 54px !important;
 
     margin: 0 !important;
 
-    box-sizing: border-box !important;
+    padding: 0 !important;
 
-    background: #ffffff !important;
+    box-sizing: border-box;
 
-    background-color: #ffffff !important;
+    border:
+      2px solid
+      #d5b239 !important;
 
-    border: 0 !important;
+    border-radius:
+      12px !important;
 
-    border-bottom:
-      1px solid rgba(30, 30, 30, 0.12) !important;
+    background:
+      transparent !important;
 
-    text-decoration: none !important;
+    box-shadow: none !important;
 
-    text-transform: uppercase !important;
-
-    text-align: center !important;
-
-    /*
-      THIS FORCES THE TEXT DARK
-    */
-
-    color: rgb(25, 25, 25) !important;
+    color: #181818 !important;
 
     -webkit-text-fill-color:
-      rgb(25, 25, 25) !important;
-
-    /*
-      THIS PREVENTS FADED TEXT
-    */
+      #181818 !important;
 
     opacity: 1 !important;
 
     visibility: visible !important;
 
-    filter: opacity(1) !important;
+    cursor: pointer;
+  }
 
-    mix-blend-mode: normal !important;
 
-    text-shadow: none !important;
+  .jwl-menu-icon {
+    display: block !important;
 
-    backdrop-filter: none !important;
+    color: #181818 !important;
 
-    transform: none !important;
+    -webkit-text-fill-color:
+      #181818 !important;
+
+    font-size: 30px !important;
+
+    font-weight: 400;
+
+    line-height: 1;
+
+    opacity: 1 !important;
+  }
+
+
+  /* =====================================================
+     MOBILE LOGO
+     ===================================================== */
+
+  .jwl-logo {
+    grid-column: 2;
+
+    min-width: 0;
+
+    width: 100%;
+
+    padding: 0 4px;
+
+    margin: 0;
+
+    box-sizing: border-box;
+
+    overflow: hidden;
+
+    white-space: nowrap;
+
+    text-overflow: ellipsis;
+
+    text-align: center;
+
+    font-size: 17px !important;
+
+    letter-spacing:
+      0.13em !important;
+
+    color: #ffffff !important;
+
+    -webkit-text-fill-color:
+      #ffffff !important;
+
+    opacity: 1 !important;
+
+    visibility: visible !important;
+  }
+
+
+  /* =====================================================
+     MOBILE APPOINTMENT BUTTON
+     ===================================================== */
+
+  .jwl-appointment {
+    grid-column: 3;
+
+    justify-self: end;
+
+    width: 58px !important;
+
+    min-width: 58px !important;
+
+    height: 58px !important;
+
+    min-height: 58px !important;
+
+    padding: 0 !important;
+
+    border-radius: 50% !important;
+
+    background:
+      linear-gradient(
+        135deg,
+        #f0d663,
+        #c49a22
+      ) !important;
+
+    color: #171717 !important;
+
+    -webkit-text-fill-color:
+      #171717 !important;
+
+    opacity: 1 !important;
+  }
+
+
+  .jwl-appointment-desktop {
+    display: none;
+  }
+
+
+  .jwl-appointment-mobile {
+    display: block !important;
+
+    color: #171717 !important;
+
+    -webkit-text-fill-color:
+      #171717 !important;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.05em;
+
+    line-height: 1;
+
+    opacity: 1 !important;
+  }
+
+
+  /* =====================================================
+     MOBILE NAV CLOSED
+     ===================================================== */
+
+  .jwl-nav {
+    display: none !important;
+  }
+
+
+  /* =====================================================
+     MOBILE NAV OPEN
+     ===================================================== */
+
+  html body #root
+  .jwl-header
+  .jwl-nav.jwl-nav-open {
+
+    display: flex !important;
+
+    position: relative !important;
+
+    flex-direction:
+      column !important;
+
+    align-items:
+      stretch !important;
+
+    justify-content:
+      flex-start !important;
+
+    gap: 0 !important;
+
+    width: 100% !important;
+
+    padding:
+      0 28px !important;
+
+    margin: 0 !important;
+
+    box-sizing: border-box;
+
+    background:
+      #ffffff !important;
+
+    background-color:
+      #ffffff !important;
+
+    border: none !important;
+
+    opacity: 1 !important;
+
+    visibility:
+      visible !important;
+
+    filter: none !important;
+
+    backdrop-filter:
+      none !important;
+
+    mix-blend-mode:
+      normal !important;
+
+    transform:
+      none !important;
+
+    z-index:
+      9999999 !important;
+  }
+
+
+  /* =====================================================
+     MOBILE NAV LINKS
+
+     IMPORTANT:
+     These selectors intentionally have very high
+     specificity so global.css cannot turn them white.
+     ===================================================== */
+
+  html body #root
+  .jwl-header
+  .jwl-nav.jwl-nav-open
+  > a.jwl-nav-link {
+
+    display: flex !important;
+
+    align-items:
+      center !important;
+
+    justify-content:
+      center !important;
+
+    width: 100% !important;
+
+    min-height:
+      74px !important;
+
+    padding:
+      20px 8px !important;
+
+    margin:
+      0 !important;
+
+    box-sizing:
+      border-box !important;
 
     /*
-      TEXT
+      WHITE BACKGROUND
     */
+
+    background:
+      #ffffff !important;
+
+    background-color:
+      #ffffff !important;
+
+    /*
+      DIVIDER
+    */
+
+    border:
+      none !important;
+
+    border-bottom:
+      1px solid
+      #e7e4dc !important;
+
+    /*
+      DARK TEXT
+    */
+
+    color:
+      #181818 !important;
+
+    -webkit-text-fill-color:
+      #181818 !important;
+
+    /*
+      ABSOLUTELY NO FADING
+    */
+
+    opacity:
+      1 !important;
+
+    visibility:
+      visible !important;
+
+    filter:
+      none !important;
+
+    text-shadow:
+      none !important;
+
+    backdrop-filter:
+      none !important;
+
+    mix-blend-mode:
+      normal !important;
+
+    transform:
+      none !important;
+
+    /*
+      TYPOGRAPHY
+    */
+
+    text-decoration:
+      none !important;
+
+    text-transform:
+      uppercase !important;
+
+    text-align:
+      center !important;
 
     font-family:
       Arial,
       Helvetica,
       sans-serif !important;
 
-    font-size: 14px !important;
+    font-size:
+      14px !important;
 
-    font-weight: 700 !important;
+    font-weight:
+      700 !important;
 
-    letter-spacing: 0.17em !important;
+    letter-spacing:
+      0.18em !important;
 
-    line-height: 1.4 !important;
+    line-height:
+      1.4 !important;
   }
 
 
-  /* --------------------------------------------------
-     ACTIVE ITEM
-     -------------------------------------------------- */
+  /* =====================================================
+     ACTIVE MOBILE LINK
+     ===================================================== */
 
-  .luxury-header
-  .luxury-nav.luxury-nav-open
-  > .luxury-nav-link-active {
+  html body #root
+  .jwl-header
+  .jwl-nav.jwl-nav-open
+  > a.jwl-nav-link-active {
 
-    color: #9a7623 !important;
+    color:
+      #98731e !important;
 
     -webkit-text-fill-color:
-      #9a7623 !important;
+      #98731e !important;
 
-    background: #faf8f2 !important;
+    background:
+      #faf8f2 !important;
   }
 
 
-  /* --------------------------------------------------
-     TAP
-     -------------------------------------------------- */
+  /* =====================================================
+     MOBILE TAP
+     ===================================================== */
 
-  .luxury-header
-  .luxury-nav.luxury-nav-open
-  > .luxury-nav-link:active {
+  html body #root
+  .jwl-header
+  .jwl-nav.jwl-nav-open
+  > a.jwl-nav-link:active {
 
-    color: #9a7623 !important;
+    color:
+      #98731e !important;
 
     -webkit-text-fill-color:
-      #9a7623 !important;
+      #98731e !important;
 
-    background: #faf8f2 !important;
+    background:
+      #faf8f2 !important;
   }
 
 
-  /* --------------------------------------------------
-     LAST LINK
-     -------------------------------------------------- */
+  /* =====================================================
+     LAST ITEM
+     ===================================================== */
 
-  .luxury-header
-  .luxury-nav.luxury-nav-open
-  > .luxury-nav-link:last-child {
+  html body #root
+  .jwl-header
+  .jwl-nav.jwl-nav-open
+  > a.jwl-nav-link:last-child {
 
-    border-bottom: none !important;
+    border-bottom:
+      none !important;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media screen and (max-width: 390px) {
+
+  .jwl-header-top {
+    grid-template-columns:
+      54px
+      minmax(0, 1fr)
+      54px;
+
+    padding:
+      0 10px;
+
+    gap: 5px;
+  }
+
+
+  .jwl-menu-button {
+    width:
+      48px !important;
+
+    height:
+      48px !important;
+  }
+
+
+  .jwl-menu-icon {
+    font-size:
+      26px !important;
+  }
+
+
+  .jwl-logo {
+    font-size:
+      14px !important;
+
+    letter-spacing:
+      0.1em !important;
+  }
+
+
+  .jwl-appointment {
+    width:
+      50px !important;
+
+    min-width:
+      50px !important;
+
+    height:
+      50px !important;
+
+    min-height:
+      50px !important;
+  }
+
+
+  .jwl-appointment-mobile {
+    font-size:
+      9px;
   }
 }

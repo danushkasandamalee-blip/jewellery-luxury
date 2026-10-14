@@ -1,25 +1,43 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { supabase } from "../lib/supabaseClient";
-import "./Header.css";
+import "../styles/Header.css";
 
 export default function Header() {
-  const [businessName, setBusinessName] = useState("JEWELLERY");
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [businessName, setBusinessName] =
+    useState("YOUR JEWELLERY BRAND");
+
+  const [menuOpen, setMenuOpen] =
+    useState(false);
 
   useEffect(() => {
     loadBusinessName();
   }, []);
 
   async function loadBusinessName() {
-    const { data, error } = await supabase
-      .from("site_settings")
-      .select("setting_value")
-      .eq("setting_key", "business_name")
-      .maybeSingle();
+    try {
+      const { data, error } = await supabase
+        .from("site_settings")
+        .select("setting_value")
+        .eq("setting_key", "business_name")
+        .maybeSingle();
 
-    if (!error && data?.setting_value) {
-      setBusinessName(data.setting_value);
+      if (error) {
+        console.error(
+          "Error loading business name:",
+          error
+        );
+        return;
+      }
+
+      if (data?.setting_value) {
+        setBusinessName(data.setting_value);
+      }
+    } catch (error) {
+      console.error(
+        "Business name load failed:",
+        error
+      );
     }
   }
 
@@ -27,101 +45,125 @@ export default function Header() {
     setMenuOpen(false);
   }
 
-  function getNavClass({ isActive }) {
+  function navClass({ isActive }) {
     return isActive
-      ? "luxury-nav-link luxury-nav-link-active"
-      : "luxury-nav-link";
+      ? "jwl-nav-link jwl-nav-link-active"
+      : "jwl-nav-link";
   }
 
   return (
-    <header className="luxury-header">
-      <div className="luxury-header-top">
+    <header className="jwl-header">
 
+      {/* TOP HEADER */}
+      <div className="jwl-header-top">
+
+        {/* MOBILE MENU BUTTON */}
         <button
           type="button"
-          className="luxury-menu-button"
-          onClick={() => setMenuOpen((current) => !current)}
-          aria-label={menuOpen ? "Close menu" : "Open menu"}
+          className="jwl-menu-button"
+          onClick={() =>
+            setMenuOpen((current) => !current)
+          }
+          aria-label={
+            menuOpen
+              ? "Close navigation menu"
+              : "Open navigation menu"
+          }
           aria-expanded={menuOpen}
         >
-          {menuOpen ? "✕" : "☰"}
+          <span className="jwl-menu-icon">
+            {menuOpen ? "✕" : "☰"}
+          </span>
         </button>
 
+
+        {/* BUSINESS NAME */}
         <Link
           to="/"
-          className="luxury-logo"
+          className="jwl-logo"
           onClick={closeMenu}
         >
           {businessName}
         </Link>
 
+
+        {/* APPOINTMENT BUTTON */}
         <Link
           to="/appointment"
-          className="luxury-appointment"
+          className="jwl-appointment"
           onClick={closeMenu}
         >
-          Appointment
+          <span className="jwl-appointment-desktop">
+            Appointment
+          </span>
+
+          <span className="jwl-appointment-mobile">
+            Book
+          </span>
         </Link>
 
       </div>
 
+
+      {/* NAVIGATION */}
       <nav
         className={
           menuOpen
-            ? "luxury-nav luxury-nav-open"
-            : "luxury-nav"
+            ? "jwl-nav jwl-nav-open"
+            : "jwl-nav"
         }
       >
 
         <NavLink
-          className={getNavClass}
           to="/shop"
+          className={navClass}
           onClick={closeMenu}
         >
           Jewellery
         </NavLink>
 
         <NavLink
-          className={getNavClass}
           to="/collections"
+          className={navClass}
           onClick={closeMenu}
         >
           Collections
         </NavLink>
 
         <NavLink
-          className={getNavClass}
           to="/category/rings"
+          className={navClass}
           onClick={closeMenu}
         >
           Rings
         </NavLink>
 
         <NavLink
-          className={getNavClass}
           to="/category/earrings"
+          className={navClass}
           onClick={closeMenu}
         >
           Earrings
         </NavLink>
 
         <NavLink
-          className={getNavClass}
           to="/about"
+          className={navClass}
           onClick={closeMenu}
         >
           Our Story
         </NavLink>
 
         <NavLink
-          className={getNavClass}
           to="/contact"
+          className={navClass}
           onClick={closeMenu}
         >
           Contact
         </NavLink>
 
       </nav>
+
     </header>
   );
 }

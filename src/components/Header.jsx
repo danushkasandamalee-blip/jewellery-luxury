@@ -3,11 +3,8 @@ import { Link, NavLink } from "react-router-dom";
 import { supabase } from "../lib/supabaseClient";
 
 export default function Header() {
-  const [businessName, setBusinessName] =
-    useState("JEWELLERY");
-
-  const [menuOpen, setMenuOpen] =
-    useState(false);
+  const [businessName, setBusinessName] = useState("JEWELLERY");
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     loadBusinessName();
@@ -30,7 +27,7 @@ export default function Header() {
   }
 
   function navClass({ isActive }) {
-    return isActive ? "active" : "";
+    return isActive ? "nav-link active" : "nav-link";
   }
 
   return (
@@ -41,12 +38,11 @@ export default function Header() {
         <button
           type="button"
           className="mobile-menu-button"
-          onClick={() =>
-            setMenuOpen((current) => !current)
-          }
-          aria-label="Open menu"
+          onClick={() => setMenuOpen((current) => !current)}
+          aria-label={menuOpen ? "Close menu" : "Open menu"}
+          aria-expanded={menuOpen}
         >
-          ☰
+          {menuOpen ? "✕" : "☰"}
         </button>
 
         <Link
@@ -68,11 +64,9 @@ export default function Header() {
       </div>
 
       <nav
-        className={
-          menuOpen
-            ? "main-nav main-nav-open"
-            : "main-nav"
-        }
+        className={`main-nav ${
+          menuOpen ? "main-nav-open" : ""
+        }`}
       >
 
         <NavLink

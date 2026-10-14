@@ -200,6 +200,162 @@
 
 
 /* =========================================================
+   WEBSITE HEADER
+   ========================================================= */
+
+.site-header {
+  position: relative;
+  width: 100%;
+  z-index: 1000;
+  background: #ffffff;
+}
+
+
+/* =========================================================
+   HEADER TOP
+   ========================================================= */
+
+.header-top {
+  min-height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 40px;
+
+  background: #555553;
+}
+
+
+/* =========================================================
+   BUSINESS LOGO / NAME
+   ========================================================= */
+
+.site-logo {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+
+  text-decoration: none;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 22px;
+  font-weight: 400;
+
+  letter-spacing: 0.16em;
+
+  text-transform: uppercase;
+
+  opacity: 1 !important;
+}
+
+
+/* =========================================================
+   APPOINTMENT BUTTON
+   ========================================================= */
+
+.header-appointment {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 46px;
+
+  padding: 0 20px;
+
+  border-radius: 30px;
+
+  text-decoration: none;
+
+  color: #171717 !important;
+  -webkit-text-fill-color: #171717 !important;
+
+  background: #d7b63e;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.1em;
+
+  opacity: 1 !important;
+}
+
+
+/* =========================================================
+   DESKTOP MENU
+   ========================================================= */
+
+.main-nav {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  gap: 38px;
+
+  padding: 18px 30px;
+
+  margin: 0;
+
+  background: #ffffff;
+
+  opacity: 1;
+  visibility: visible;
+}
+
+
+/* =========================================================
+   DESKTOP MENU LINKS
+   ========================================================= */
+
+.main-nav .nav-link {
+  display: block;
+
+  color: #222222 !important;
+  -webkit-text-fill-color: #222222 !important;
+
+  opacity: 1 !important;
+
+  visibility: visible !important;
+
+  text-decoration: none;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.16em;
+
+  font-size: 13px;
+
+  font-weight: 500;
+
+  transition:
+    color 0.25s ease,
+    background-color 0.25s ease;
+}
+
+.main-nav .nav-link:hover {
+  color: #af8a32 !important;
+  -webkit-text-fill-color: #af8a32 !important;
+}
+
+.main-nav .nav-link.active {
+  color: #af8a32 !important;
+  -webkit-text-fill-color: #af8a32 !important;
+}
+
+
+/* =========================================================
+   MOBILE MENU BUTTON
+   ========================================================= */
+
+.mobile-menu-button {
+  display: none;
+}
+
+
+/* =========================================================
    TABLET
    ========================================================= */
 
@@ -247,179 +403,348 @@
 
 
 /* =========================================================
-   MOBILE MENU FIX
+   MOBILE HEADER + MENU
    ========================================================= */
 
 @media (max-width: 768px) {
 
-  /*
-    MENU BACKGROUND
-  */
+  /* -------------------------------------------------------
+     HEADER TOP
+     ------------------------------------------------------- */
 
-  .mobile-menu,
-  .mobile-nav,
-  .nav-menu,
-  .menu-overlay,
-  .menu-panel,
-  .menu-drawer,
-  .drawer-menu,
-  .drawer,
-  .navigation-menu {
-    background: #ffffff !important;
-    background-color: #ffffff !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-    filter: none !important;
-    mix-blend-mode: normal !important;
-    z-index: 99999 !important;
+  .header-top {
+    min-height: 82px;
+
+    padding: 0 22px;
+
+    gap: 12px;
+
+    background: #555553;
   }
 
 
-  /*
-    FORCE ALL MOBILE MENU TEXT DARK
-  */
+  /* -------------------------------------------------------
+     HAMBURGER BUTTON
+     ------------------------------------------------------- */
 
-  .mobile-menu *,
-  .mobile-nav *,
-  .nav-menu *,
-  .menu-overlay *,
-  .menu-panel *,
-  .menu-drawer *,
-  .drawer-menu *,
-  .drawer *,
-  .navigation-menu * {
+  .mobile-menu-button {
+    flex: 0 0 54px;
+
+    width: 54px;
+    height: 54px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    border: 2px solid #d4b13b;
+
+    border-radius: 12px;
+
+    background: transparent;
+
     color: #202020 !important;
 
     -webkit-text-fill-color: #202020 !important;
 
+    font-size: 28px;
+
+    font-weight: 400;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    opacity: 1 !important;
+  }
+
+
+  /* -------------------------------------------------------
+     BUSINESS NAME
+     ------------------------------------------------------- */
+
+  .site-logo {
+    flex: 1;
+
+    min-width: 0;
+
+    text-align: center;
+
+    color: #ffffff !important;
+
+    -webkit-text-fill-color: #ffffff !important;
+
+    opacity: 1 !important;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 17px;
+
+    font-weight: 400;
+
+    letter-spacing: 0.14em;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    padding: 0 5px;
+  }
+
+
+  /* -------------------------------------------------------
+     MOBILE APPOINTMENT BUTTON
+     ------------------------------------------------------- */
+
+  .header-appointment {
+    flex: 0 0 64px;
+
+    width: 64px;
+
+    min-height: 54px;
+
+    padding: 0 8px;
+
+    border-radius: 30px;
+
+    color: #171717 !important;
+
+    -webkit-text-fill-color: #171717 !important;
+
+    background: #d7b63e;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.05em;
+
+    text-align: center;
+
+    overflow: hidden;
+  }
+
+
+  /* =====================================================
+     MOBILE NAVIGATION - CLOSED
+     ===================================================== */
+
+  .main-nav {
+    display: none !important;
+
+    width: 100%;
+
+    margin: 0;
+
+    padding: 0 30px;
+
+    box-sizing: border-box;
+
+    flex-direction: column;
+
+    gap: 0;
+
+    background: #ffffff !important;
+
+    background-color: #ffffff !important;
+
     opacity: 1 !important;
 
     visibility: visible !important;
+
+    filter: none !important;
+
+    mix-blend-mode: normal !important;
+  }
+
+
+  /* =====================================================
+     MOBILE NAVIGATION - OPEN
+     ===================================================== */
+
+  .main-nav.main-nav-open {
+    display: flex !important;
+
+    flex-direction: column !important;
+
+    width: 100% !important;
+
+    background: #ffffff !important;
+
+    background-color: #ffffff !important;
+
+    opacity: 1 !important;
+
+    visibility: visible !important;
+
+    filter: none !important;
+
+    mix-blend-mode: normal !important;
+
+    position: relative;
+
+    z-index: 9999;
+  }
+
+
+  /* =====================================================
+     MOBILE MENU LINKS
+     THIS IS THE IMPORTANT PART
+     ===================================================== */
+
+  .site-header .main-nav .nav-link {
+    display: flex !important;
+
+    align-items: center !important;
+
+    justify-content: center !important;
+
+    width: 100% !important;
+
+    min-height: 82px;
+
+    margin: 0 !important;
+
+    padding: 20px 10px !important;
+
+    box-sizing: border-box;
+
+    border-bottom: 1px solid #e4e1db;
+
+    background: #ffffff !important;
+
+    background-color: #ffffff !important;
+
+    /*
+      FORCE TEXT TO DARK
+    */
+
+    color: #1d1d1d !important;
+
+    -webkit-text-fill-color: #1d1d1d !important;
+
+    opacity: 1 !important;
+
+    visibility: visible !important;
+
+    /*
+      REMOVE ANY EFFECT THAT COULD FADE TEXT
+    */
+
+    filter: none !important;
+
+    mix-blend-mode: normal !important;
 
     text-shadow: none !important;
 
+    /*
+      TYPOGRAPHY
+    */
+
+    text-decoration: none !important;
+
+    text-transform: uppercase;
+
+    text-align: center;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 15px !important;
+
+    font-weight: 600 !important;
+
+    letter-spacing: 0.18em !important;
+
+    line-height: 1.4;
+  }
+
+
+  /* -------------------------------------------------------
+     FORCE ANY CHILD TEXT DARK TOO
+     ------------------------------------------------------- */
+
+  .site-header .main-nav .nav-link *,
+  .site-header .main-nav .nav-link span,
+  .site-header .main-nav .nav-link p {
+    color: #1d1d1d !important;
+
+    -webkit-text-fill-color: #1d1d1d !important;
+
+    opacity: 1 !important;
+
+    visibility: visible !important;
+
     filter: none !important;
+
+    text-shadow: none !important;
 
     mix-blend-mode: normal !important;
   }
 
 
-  /*
-    LINKS
-  */
+  /* -------------------------------------------------------
+     ACTIVE MENU LINK
+     ------------------------------------------------------- */
 
-  .mobile-menu a,
-  .mobile-nav a,
-  .nav-menu a,
-  .menu-overlay a,
-  .menu-panel a,
-  .menu-drawer a,
-  .drawer-menu a,
-  .drawer a,
-  .navigation-menu a {
-    color: #202020 !important;
+  .site-header .main-nav .nav-link.active {
+    color: #9c7926 !important;
 
-    -webkit-text-fill-color: #202020 !important;
+    -webkit-text-fill-color: #9c7926 !important;
+
+    background: #faf8f3 !important;
+
+    opacity: 1 !important;
+  }
+
+
+  /* -------------------------------------------------------
+     HOVER / TAP
+     ------------------------------------------------------- */
+
+  .site-header .main-nav .nav-link:hover,
+  .site-header .main-nav .nav-link:active {
+    color: #9c7926 !important;
+
+    -webkit-text-fill-color: #9c7926 !important;
+
+    background: #faf8f3 !important;
+
+    opacity: 1 !important;
+  }
+
+
+  /* -------------------------------------------------------
+     REMOVE BORDER FROM LAST LINK
+     ------------------------------------------------------- */
+
+  .site-header .main-nav .nav-link:last-child {
+    border-bottom: none;
+  }
+
+
+  /* -------------------------------------------------------
+     EXTREME FALLBACK
+     This protects against old global anchor styles.
+     ------------------------------------------------------- */
+
+  body .site-header nav.main-nav.main-nav-open > a.nav-link {
+    color: #1d1d1d !important;
+
+    -webkit-text-fill-color: #1d1d1d !important;
 
     opacity: 1 !important;
 
     visibility: visible !important;
-
-    font-weight: 500 !important;
-
-    letter-spacing: 0.18em;
-
-    text-decoration: none !important;
   }
 
+  body .site-header nav.main-nav.main-nav-open > a.nav-link.active {
+    color: #9c7926 !important;
 
-  /*
-    TEXT INSIDE SPANS
-  */
-
-  .mobile-menu a span,
-  .mobile-nav a span,
-  .nav-menu a span,
-  .menu-overlay a span,
-  .menu-panel a span,
-  .menu-drawer a span,
-  .drawer-menu a span,
-  .drawer a span,
-  .navigation-menu a span {
-    color: #202020 !important;
-
-    -webkit-text-fill-color: #202020 !important;
-
-    opacity: 1 !important;
-
-    visibility: visible !important;
-  }
-
-
-  /*
-    MENU ITEMS
-  */
-
-  .mobile-menu li,
-  .mobile-nav li,
-  .nav-menu li,
-  .menu-overlay li,
-  .menu-panel li,
-  .menu-drawer li,
-  .drawer-menu li,
-  .drawer li,
-  .navigation-menu li {
-    opacity: 1 !important;
-
-    visibility: visible !important;
-
-    border-bottom:
-      1px solid rgba(32, 32, 32, 0.10) !important;
-  }
-
-
-  /*
-    HOVER / TAP
-  */
-
-  .mobile-menu a:hover,
-  .mobile-menu a:active,
-  .mobile-nav a:hover,
-  .mobile-nav a:active,
-  .nav-menu a:hover,
-  .nav-menu a:active,
-  .menu-overlay a:hover,
-  .menu-overlay a:active,
-  .menu-panel a:hover,
-  .menu-panel a:active,
-  .menu-drawer a:hover,
-  .menu-drawer a:active,
-  .drawer-menu a:hover,
-  .drawer-menu a:active,
-  .drawer a:hover,
-  .drawer a:active,
-  .navigation-menu a:hover,
-  .navigation-menu a:active {
-    color: #b38b35 !important;
-
-    -webkit-text-fill-color: #b38b35 !important;
-  }
-
-
-  /*
-    EXTRA FALLBACK FOR NAVIGATION INSIDE HEADER
-  */
-
-  header nav a,
-  header nav a span,
-  header nav li,
-  header nav p {
-    color: #202020 !important;
-
-    -webkit-text-fill-color: #202020 !important;
-
-    opacity: 1 !important;
-
-    visibility: visible !important;
+    -webkit-text-fill-color: #9c7926 !important;
   }
 }

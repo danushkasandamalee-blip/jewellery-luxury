@@ -1,6 +1,6 @@
 /* ============================================
-   SITE FOOTER — Luxury Enhancement
-   Desktop design preserved
+   SITE FOOTER — Luxury Enhancement v2
+   Desktop design preserved · Mobile responsive
    ============================================ */
 
 .site-footer {
@@ -13,20 +13,36 @@
     1.5rem
     2rem;
 
-  background: linear-gradient(
-    180deg,
-    #0c0c0e 0%,
-    #08080a 100%
-  );
+  /* Deeper, richer luxury gradient */
+  background:
+    radial-gradient(
+      ellipse at 20% 0%,
+      rgba(212, 175, 55, 0.06) 0%,
+      transparent 55%
+    ),
+    radial-gradient(
+      ellipse at 80% 100%,
+      rgba(212, 175, 55, 0.04) 0%,
+      transparent 55%
+    ),
+    linear-gradient(
+      180deg,
+      #0c0c0e 0%,
+      #08080a 100%
+    );
 
   color:
     rgba(245, 241, 232, 0.78);
 
   overflow: hidden;
+
+  /* Top gold hairline accent */
+  box-shadow:
+    inset 0 1px 0 rgba(212, 175, 55, 0.22);
 }
 
 
-/* Soft radial gold glow */
+/* Soft radial gold glow (kept + intensified slightly) */
 
 .site-footer::before {
   content: "";
@@ -44,11 +60,13 @@
 
   background: radial-gradient(
     ellipse at center,
-    rgba(212, 175, 55, 0.1) 0%,
+    rgba(212, 175, 55, 0.14) 0%,
     transparent 65%
   );
 
   pointer-events: none;
+
+  filter: blur(6px);
 }
 
 
@@ -84,9 +102,13 @@
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(212, 175, 55, 0.55),
+    rgba(212, 175, 55, 0.65),
     transparent
   );
+
+  /* Soft glow on the line */
+  box-shadow:
+    0 0 12px rgba(212, 175, 55, 0.35);
 }
 
 .divider-mark {
@@ -94,7 +116,23 @@
 
   font-size: 0.85rem;
 
-  opacity: 0.85;
+  opacity: 0.9;
+
+  text-shadow:
+    0 0 14px rgba(212, 175, 55, 0.7);
+
+  animation: dividerPulse 3.5s ease-in-out infinite;
+}
+
+@keyframes dividerPulse {
+  0%, 100% {
+    opacity: 0.75;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
 }
 
 
@@ -149,6 +187,21 @@
   position: relative;
 
   display: inline-block;
+
+  /* Very subtle golden halo */
+  text-shadow:
+    0 0 24px rgba(212, 175, 55, 0.15);
+
+  transition:
+    color 0.35s ease,
+    text-shadow 0.35s ease;
+}
+
+.footer-brand-name:hover {
+  color: #f2d86d;
+
+  text-shadow:
+    0 0 32px rgba(212, 175, 55, 0.45);
 }
 
 .footer-brand-name::after {
@@ -167,8 +220,20 @@
   background: linear-gradient(
     90deg,
     #d4af37,
-    transparent
+    rgba(212, 175, 55, 0.15)
   );
+
+  border-radius: 2px;
+
+  box-shadow:
+    0 0 10px rgba(212, 175, 55, 0.55);
+
+  transition:
+    width 0.35s ease;
+}
+
+.footer-brand-name:hover::after {
+  width: 72px;
 }
 
 .footer-brand-text {
@@ -206,6 +271,9 @@
   position: relative;
 
   padding-bottom: 0.6rem;
+
+  text-shadow:
+    0 0 18px rgba(212, 175, 55, 0.25);
 }
 
 .footer-column-title::after {
@@ -223,7 +291,12 @@
 
   background: #d4af37;
 
-  opacity: 0.6;
+  opacity: 0.75;
+
+  border-radius: 2px;
+
+  box-shadow:
+    0 0 8px rgba(212, 175, 55, 0.6);
 }
 
 
@@ -257,7 +330,8 @@
 
   transition:
     color 0.3s ease,
-    padding-left 0.3s ease;
+    padding-left 0.3s ease,
+    text-shadow 0.3s ease;
 }
 
 .footer-links a::before {
@@ -284,9 +358,12 @@
 }
 
 .footer-links a:hover {
-  color: #d4af37;
+  color: #f2d86d;
 
   padding-left: 14px;
+
+  text-shadow:
+    0 0 14px rgba(212, 175, 55, 0.35);
 }
 
 .footer-links a:hover::before {
@@ -328,13 +405,17 @@
   margin: 0;
 
   transition:
-    color 0.3s ease;
+    color 0.3s ease,
+    text-shadow 0.3s ease;
 
   overflow-wrap: anywhere;
 }
 
 .footer-contact a:hover {
-  color: #d4af37;
+  color: #f2d86d;
+
+  text-shadow:
+    0 0 14px rgba(212, 175, 55, 0.35);
 }
 
 .contact-icon {
@@ -342,12 +423,15 @@
 
   font-size: 0.95rem;
 
-  opacity: 0.85;
+  opacity: 0.9;
 
   flex-shrink: 0;
 
   transform:
     translateY(1px);
+
+  text-shadow:
+    0 0 10px rgba(212, 175, 55, 0.5);
 }
 
 
@@ -372,18 +456,28 @@
 
   border:
     1px solid
-    rgba(212, 175, 55, 0.28);
+    rgba(212, 175, 55, 0.32);
 
   border-radius: 999px;
 
   overflow: hidden;
 
   background:
-    rgba(255, 255, 255, 0.03);
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.04) 0%,
+      rgba(212, 175, 55, 0.03) 100%
+    );
 
   transition:
     border-color 0.3s ease,
-    box-shadow 0.3s ease;
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+}
+
+.newsletter-form:hover {
+  border-color:
+    rgba(212, 175, 55, 0.5);
 }
 
 .newsletter-form:focus-within {
@@ -391,7 +485,9 @@
 
   box-shadow:
     0 0 0 3px
-    rgba(212, 175, 55, 0.15);
+    rgba(212, 175, 55, 0.15),
+    0 0 22px
+    rgba(212, 175, 55, 0.18);
 }
 
 .newsletter-form input {
@@ -443,15 +539,49 @@
   background: linear-gradient(
     135deg,
     #f5d97a 0%,
+    #e1c568 45%,
     #d4af37 100%
   );
 
+  position: relative;
+
+  overflow: hidden;
+
   transition:
-    filter 0.3s ease;
+    filter 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* Light sweep on button */
+.newsletter-form button::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background: linear-gradient(
+    120deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.55) 50%,
+    transparent 70%
+  );
+
+  transform: translateX(-120%);
+
+  transition: transform 0.7s ease;
+}
+
+.newsletter-form button:hover:not(:disabled)::before {
+  transform: translateX(120%);
 }
 
 .newsletter-form button:hover:not(:disabled) {
   filter: brightness(1.08);
+
+  box-shadow:
+    inset 0 0 12px
+    rgba(255, 255, 255, 0.25);
 }
 
 .newsletter-form button:disabled {
@@ -472,10 +602,16 @@
 
 .newsletter-message-success {
   color: #7ed8a0;
+
+  text-shadow:
+    0 0 10px rgba(126, 216, 160, 0.3);
 }
 
 .newsletter-message-error {
   color: #e88b9a;
+
+  text-shadow:
+    0 0 10px rgba(232, 139, 154, 0.3);
 }
 
 
@@ -501,7 +637,7 @@
 
   border-top:
     1px solid
-    rgba(212, 175, 55, 0.1);
+    rgba(212, 175, 55, 0.14);
 
   position: relative;
 
@@ -530,16 +666,20 @@
   text-decoration: none;
 
   color:
-    rgba(245, 241, 232, 0.75);
+    rgba(245, 241, 232, 0.78);
 
   border:
     1px solid
-    rgba(212, 175, 55, 0.25);
+    rgba(212, 175, 55, 0.28);
 
   border-radius: 999px;
 
   background:
-    rgba(212, 175, 55, 0.04);
+    linear-gradient(
+      135deg,
+      rgba(212, 175, 55, 0.06) 0%,
+      rgba(212, 175, 55, 0.02) 100%
+    );
 
   transition:
     all 0.3s ease;
@@ -548,7 +688,12 @@
 .footer-social a:hover {
   color: #0c0c0e;
 
-  background: #d4af37;
+  background:
+    linear-gradient(
+      135deg,
+      #f5d97a 0%,
+      #d4af37 100%
+    );
 
   border-color: #d4af37;
 
@@ -557,7 +702,9 @@
 
   box-shadow:
     0 8px 20px
-    rgba(212, 175, 55, 0.35);
+    rgba(212, 175, 55, 0.45),
+    inset 0 1px 0
+    rgba(255, 255, 255, 0.45);
 }
 
 
@@ -575,7 +722,7 @@
 
   border-top:
     1px solid
-    rgba(212, 175, 55, 0.08);
+    rgba(212, 175, 55, 0.1);
 
   text-align: center;
 
@@ -747,6 +894,16 @@
     padding:
       0.9rem
       1rem;
+  }
+
+  /* Remove rounded sweep shimmer issue on stacked button */
+  .newsletter-form button::before {
+    background: linear-gradient(
+      120deg,
+      transparent 30%,
+      rgba(255, 255, 255, 0.4) 50%,
+      transparent 70%
+    );
   }
 
 

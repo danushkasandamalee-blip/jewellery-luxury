@@ -1,18 +1,26 @@
 import { useEffect, useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { supabase } from "../lib/supabaseClient";
 import "../styles/Header.css";
 
 export default function Header() {
-  const [businessName, setBusinessName] =
-    useState("YOUR JEWELLERY BRAND");
+  const [businessName, setBusinessName] = useState(
+    "YOUR JEWELLERY BRAND"
+  );
 
-  const [menuOpen, setMenuOpen] =
-    useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
+  const location = useLocation();
+
+  /* Load business name */
   useEffect(() => {
     loadBusinessName();
   }, []);
+
+  /* Close mobile menu whenever route changes */
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [location.pathname]);
 
   async function loadBusinessName() {
     try {
@@ -23,10 +31,7 @@ export default function Header() {
         .maybeSingle();
 
       if (error) {
-        console.error(
-          "Error loading business name:",
-          error
-        );
+        console.error("Error loading business name:", error);
         return;
       }
 
@@ -34,11 +39,12 @@ export default function Header() {
         setBusinessName(data.setting_value);
       }
     } catch (error) {
-      console.error(
-        "Business name load failed:",
-        error
-      );
+      console.error("Business name load failed:", error);
     }
+  }
+
+  function toggleMenu() {
+    setMenuOpen((current) => !current);
   }
 
   function closeMenu() {
@@ -53,31 +59,33 @@ export default function Header() {
 
   return (
     <header className="jwl-header">
-
-      {/* TOP HEADER */}
+      {/* =========================
+          TOP HEADER
+      ========================= */}
       <div className="jwl-header-top">
 
         {/* MOBILE MENU BUTTON */}
         <button
           type="button"
           className="jwl-menu-button"
-          onClick={() =>
-            setMenuOpen((current) => !current)
-          }
+          onClick={toggleMenu}
           aria-label={
             menuOpen
               ? "Close navigation menu"
               : "Open navigation menu"
           }
           aria-expanded={menuOpen}
+          aria-controls="main-navigation"
         >
-          <span className="jwl-menu-icon">
+          <span
+            className="jwl-menu-icon"
+            aria-hidden="true"
+          >
             {menuOpen ? "✕" : "☰"}
           </span>
         </button>
 
-
-        {/* BUSINESS NAME */}
+        {/* BUSINESS NAME / LOGO */}
         <Link
           to="/"
           className="jwl-logo"
@@ -85,7 +93,6 @@ export default function Header() {
         >
           {businessName}
         </Link>
-
 
         {/* APPOINTMENT BUTTON */}
         <Link
@@ -101,19 +108,20 @@ export default function Header() {
             Book
           </span>
         </Link>
-
       </div>
 
-
-      {/* NAVIGATION */}
+      {/* =========================
+          NAVIGATION
+      ========================= */}
       <nav
+        id="main-navigation"
         className={
           menuOpen
             ? "jwl-nav jwl-nav-open"
             : "jwl-nav"
         }
+        aria-label="Main navigation"
       >
-
         <NavLink
           to="/shop"
           className={navClass}
@@ -147,6 +155,14 @@ export default function Header() {
         </NavLink>
 
         <NavLink
+          to="/category/necklaces"
+          className={navClass}
+          onClick={closeMenu}
+        >
+          Necklaces
+        </NavLink>
+
+        <NavLink
           to="/about"
           className={navClass}
           onClick={closeMenu}
@@ -161,9 +177,7 @@ export default function Header() {
         >
           Contact
         </NavLink>
-
       </nav>
-
     </header>
   );
 }
